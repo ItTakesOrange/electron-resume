@@ -4,7 +4,7 @@ const webpackMerge = require('webpack-merge')
 
 const config = {
   mode: 'development',
-  entry: path.resolve(__dirname, '../src/main/electron.js'),
+  entry: path.resolve(__dirname, '../src/main/electron.ts'),
   target: 'electron-main',
   output: {
     filename: 'electron.js',
