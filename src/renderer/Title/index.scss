@@ -1,0 +1,13 @@
+.title {
+  color: red;
+  animation: flash 1s infinite linear;
+}
+
+@keyframes flash {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

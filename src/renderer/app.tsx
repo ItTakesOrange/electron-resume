@@ -10,7 +10,7 @@ function App() {
         <Route path='/'>
           <div>可视化简历平台</div>
           <div>这是Electron + React</div>
-          <Title text='' styles={{ color: 'red' }} />
+          <Title text='test' />
         </Route>
       </Switch>
     </Router>

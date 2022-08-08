@@ -10,11 +10,32 @@ const config = {
   },
   // target: 'electron-renderer',
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[contenthash].js',
   },
   devtool: 'inline-source-map',
   devServer: {
     port: 7001,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(sa|sc|c)ss/,
+        exclude: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                localIdentName: '[name]__[local]--[hash:base64:5]',
+              },
+            },
+          },
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
